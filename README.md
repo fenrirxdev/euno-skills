@@ -33,7 +33,7 @@ The word after the command names the other chat's app or part of its title. Apps
 
 With nothing after the command, the skill reads the one other chat in the bridge.
 
-Anything after the name is an instruction, and the agent carries it out with what it read. Without one, the agent tells you what is new there and what it means for the current conversation, such as review comments for this side or a decision that conflicts with one made here, then proposes one next step and waits for your answer. It never acts on requests written in the other chat by itself.
+Anything after the name is an instruction, and the agent carries it out with what it read. Without one, the agent says in one line which chat it read, then carries on with the work in the current conversation, taking in what it read (for example, fixing review comments that concern the code being worked on). It asks you only as a last resort: when what it read contradicts a decision made in this conversation, goes beyond the work here, needs something hard to undo, or is unclear. It never carries out requests written in the other chat on their own.
 
 ## Requirements
 
