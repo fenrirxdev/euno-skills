@@ -25,9 +25,11 @@ If the line above still shows a placeholder, the arguments are the text the user
 1. Call the euno tool `list_chats`.
 2. Pick the chat to read.
    - The chat marked `maybe_caller: true` is probably this conversation. Never read it as the other chat.
-   - If the user named an app or a title, pick the chat in the same bridge as this conversation that matches it. If no bridge has a `maybe_caller` chat, match across all bridges.
+   - This conversation's bridge is the one with a `maybe_caller` chat. Pick only from that bridge, even if a chat in another bridge would match.
+   - If the user named an app or a title, pick the chat in this conversation's bridge that matches it.
    - If the user named nothing, pick the one other chat in this conversation's bridge.
-   - If more than one chat fits, or none does, list the candidates by app and title and ask the user. Do not guess.
+   - If no bridge has a `maybe_caller` chat, or more than one bridge has, do not choose a bridge: list the chats that match by bridge, app and title, and ask the user.
+   - If more than one chat fits, or none does, say so, list the candidates by app and title, and ask the user. Do not read a chat in another bridge instead.
 3. Call `read_messages` with that `chat_id`.
    - If you read this chat earlier in this conversation, pass the last `newer_cursor` you got, so you read only what is new.
    - Otherwise omit `cursor` to get the latest page. If that page starts in the middle of something you need, follow `older_cursor` for one or two more pages.
