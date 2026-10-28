@@ -30,7 +30,7 @@ If the line above still shows a placeholder, the arguments are the text the user
    - If the latest page starts in the middle of something you need, follow `older_cursor` for one or two more pages.
 2. If `activity` is `generating` or `unknown`, parts marked `settled: false` may still change. Keep that in mind, and mention it only if it matters.
 3. Use what you read.
-   - Start with one line: which chat you read (app and title) and how many new messages.
+   - Start with one line naming the chat you read (app and title).
    - If the user gave an instruction, do it.
    - Otherwise, carry on with the work of this conversation, taking in what you read: for example, fix the review comments that concern the code being worked on here, or follow a decision made there that this work depends on. Do not summarize the other chat unless the user asks.
    - If nothing there concerns the work here, say so in the same line and stop.
