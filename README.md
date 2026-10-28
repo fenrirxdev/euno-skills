@@ -6,7 +6,7 @@ Agent skills for [euno](https://github.com/fenrirxdev), a macOS app that lets th
 
 | Skill | What it does |
 | --- | --- |
-| [`euno`](skills/euno/SKILL.md) | Catches up on another chat you linked with euno: reads what is new there and summarizes it, or does what you ask with it. |
+| [`euno`](skills/euno/SKILL.md) | Reads what is new in another chat you linked with euno, then carries on with the work in the current chat, or does what you ask with it. |
 
 ## Install
 
