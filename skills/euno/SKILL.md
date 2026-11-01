@@ -21,11 +21,12 @@ If the line above still shows a placeholder, the arguments are the text the user
 
 ## Steps
 
-1. Read the other chat with the euno tool `read_messages`, in one call.
+1. Read the other chat with the euno tool `read_messages`.
    - If you read that chat earlier in this conversation, pass only the last `newer_cursor` you got, so you read what is new.
    - Otherwise, if the user named an app, pass it as `peer` (`claude`, `codex` or `cursor`). If they named nothing, pass nothing. euno picks the other chat in this conversation's bridge.
    - If the user named part of a title instead, call `list_chats` first. Pick the matching chat in the bridge that has a `maybe_caller: true` chat, and pass its `chat_id`.
    - If the result is an error that lists candidates, show them by app and title and ask the user which to read.
+   - If the result has `more_newer: true`, the page stopped before the end. Call again with its `newer_cursor` until `more_newer` is false, up to 5 pages in all. If it is still true after 5, tell the user there is more than you read.
    - If the latest page starts in the middle of something you need, follow `older_cursor` for one or two more pages.
 2. If `activity` is `generating` or `unknown`, parts marked `settled: false` may still change.
 3. Use what you read.
